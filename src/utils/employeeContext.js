@@ -1,6 +1,6 @@
 import React from 'react';
 
-const UserContext = React.createContext({
+const EmployeeContext = React.createContext({
     image: "",
     firstName: "",
     lastName: "",
@@ -9,4 +9,4 @@ const UserContext = React.createContext({
     dob: ""
 });
 
-export default UserContext;
+export default EmployeeContext;
