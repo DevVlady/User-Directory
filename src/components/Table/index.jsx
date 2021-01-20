@@ -49,7 +49,6 @@ class Table extends React.Component {
     }
 
     render() {
-        // const { classes } = this.props;
         return (
             <div>
                 <Search search={this.state.search} handleInputChange={this.handleInputChange} />
