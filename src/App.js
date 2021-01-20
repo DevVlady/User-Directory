@@ -1,14 +1,15 @@
 import './App.css';
-import React from 'react';
+import { BrowserRouter as Router } from "react-router-dom";
 import Directory from './pages/Directory.jsx';
 
 
 function App() {
   return (
-    
-    <div>
-      <Directory/>
-    </div>
+    <Router basename="/user-directory">
+      <div>
+        <Directory />
+      </div>
+    </Router>
   );
 }
 
