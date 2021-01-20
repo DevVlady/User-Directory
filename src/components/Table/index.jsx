@@ -1,6 +1,8 @@
 import React from 'react';
 import './style.css';
-// import EmployeeContext from '../../utils/employeeContext';
+import axios from 'axios';
+import Search from '../Form/index'
+
 
 class Table extends React.Component {
     constructor(props) {
@@ -19,9 +21,38 @@ class Table extends React.Component {
         });
     }
 
+    //Handle Change - Provides result for onclick
+    handleInputChange = (event) => {
+        let { name, value } = event.target;
+        this.setState({
+            [name]: value,
+        });
+    };
+
+    //Used for Sorth Method
+    sortByName() {
+        if (this.state.sortDirection < 1) {
+            this.setState({
+                users: this.state.users.sort((a, b) =>
+                    a.name.first > b.name.first ? 1 : -1
+                ),
+            });
+            this.setState({ sortDirection: 1 });
+        } else {
+            this.setState({
+                users: this.state.users.sort((a, b) =>
+                    a.name.first < b.name.first ? 1 : -1
+                ),
+            });
+            this.setState({ sortDirection: 0 });
+        }
+    }
+
     render() {
+        const { classes } = this.props;
         return (
             <div>
+                <Search search={this.state.search} handleInputChange={this.handleInputChange} />
                 <table class="table">
                     <thead>
                         <tr>
