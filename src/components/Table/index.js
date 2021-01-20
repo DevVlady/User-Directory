@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './style.css';
+import EmployeeContext from '../../utils/employeeContext';
 
 function Table() {
+    const { emp } = useContext(EmployeeContext)
     return (
         <div>
             <table class="table">
@@ -16,7 +18,7 @@ function Table() {
                 </thead>
                 <tbody>
                     <tr>
-                        <th scope="row">1</th>
+                        <td>{emp}</td>
                         <td>Mark</td>
                         <td>Otto</td>
                         <td>@mdo</td>

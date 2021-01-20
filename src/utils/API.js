@@ -1,9 +1,9 @@
 import axios from 'axios';
 
-// const employees = "";
+const employees = "";
 
 export default {
-    getEmployee: function() {
+    getEmployee: function(employees) {
         return new Promise((resolve, reject) => {
             axios
                 .get("https://randomuser.me/api/")
@@ -11,7 +11,7 @@ export default {
                     const employee = res.data;
                     const result = employee.map(emp => {
                         return {
-                            image: emp.results.picture.thumbnail,
+                            image: emp.picture.thumbnail,
                             firstName: emp.results.name.first,
                             lastName: emp.results.name.last,
                             phone: emp.results.phone,
