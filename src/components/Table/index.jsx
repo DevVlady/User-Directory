@@ -1,8 +1,16 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import './style.css';
-import EmployeeContext from '../../utils/employeeContext';
+// import EmployeeContext from '../../utils/employeeContext';
 
 class Table extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            users: [],
+            search: "",
+            sortDirection: 0,
+        };
+    }
 
     render() {
         return (
