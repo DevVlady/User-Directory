@@ -57,7 +57,7 @@ class Table extends React.Component {
                     <thead>
                         <tr>
                             <th scope="col">Image</th>
-                            <th scope="col">Name</th>
+                            <th scope="col" onClick={() => this.sortByName()}>Name</th>
                             <th scope="col">Phone</th>
                             <th scope="col">Email</th>
                             <th scope="col">DOB</th>
