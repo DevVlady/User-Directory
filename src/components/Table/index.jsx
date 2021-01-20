@@ -12,6 +12,13 @@ class Table extends React.Component {
         };
     }
 
+    //Referenced activity 20-07
+    componentDidMount() {
+        axios.get("https://randomuser.me/api/?results=25&nat=us").then((res) => {
+            this.setState({ users: res.data.results });
+        });
+    }
+
     render() {
         return (
             <div>
